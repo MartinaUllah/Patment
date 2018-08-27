@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Patment.Models;
 using Patment.Repository;
 
@@ -10,12 +6,14 @@ namespace Patment.Controllers
 {
     public class StaffController : Controller
     {
+        [HttpGet]
         public ActionResult AddStaff()
         {
             var staff = new Staff();
             return View(staff);
         }
 
+        [HttpPost]
         public ActionResult CreateStaff(Staff staff)
         {
             var repo = new StaffRepository();
@@ -23,6 +21,7 @@ namespace Patment.Controllers
             return View(repoStaff);
         }
 
+        [HttpGet]
         public ActionResult AllStaff()
         {
             var repo = new StaffRepository();
@@ -30,6 +29,7 @@ namespace Patment.Controllers
             return View(allStaff);
         }
 
+        [HttpGet]
         public ActionResult DetailsOfStaff(int StaffID)
         {
             var repo = new StaffRepository();
@@ -37,6 +37,7 @@ namespace Patment.Controllers
             return View(staffDetail);
         }
 
+        [HttpGet]
         //Update
         public ActionResult GettingStaffDetails(int StaffID)
         {
@@ -45,7 +46,7 @@ namespace Patment.Controllers
             return View(staffDetails);
         }
 
-
+        [HttpPut]
         public ActionResult UpdateConfirmation(Staff staff)
         {
             var repo = new StaffRepository();
@@ -53,6 +54,7 @@ namespace Patment.Controllers
             return View();
         }
 
+        [HttpDelete]
         public ActionResult DeletingOfStaff(int StaffID)
         {
             var repo = new StaffRepository();

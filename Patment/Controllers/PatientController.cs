@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Patment.Models;
 using Patment.Repository;
 
@@ -10,13 +6,14 @@ namespace Patment.Controllers
 {
     public class PatientController : Controller
     {
-        // GET: Patient
+        [HttpGet]
         public ActionResult AddPatient()
         {
             var patient = new Patient();
             return View(patient);
         }
 
+        [HttpPost]
         public ActionResult CreatePatient(Patient patient)
         {
             var repo = new PatientRepository();
@@ -24,14 +21,15 @@ namespace Patment.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult AllPatients()
         {
             var repo = new PatientRepository();
             var patients = repo.AllPatients();
             return View(patients);
-
         }
 
+        [HttpGet]
         //Details
         public ActionResult DetailsOfPatient(int patientId)
         {
@@ -40,7 +38,7 @@ namespace Patment.Controllers
             return View(detailPatient);
         }
 
-
+        [HttpGet]
         //Update
         public ActionResult GettingPatientDetails(int patientID)
         {
@@ -49,6 +47,7 @@ namespace Patment.Controllers
             return View(patientDetails);
         }
 
+        [HttpPut]
         public ActionResult UpdateConfirmation(Patient patient)
         {
             var repo = new PatientRepository();
@@ -56,6 +55,7 @@ namespace Patment.Controllers
             return View(updatedPatient);
         }
 
+        [HttpDelete]
         public ActionResult DeletePatient(int patientID)
         {
             var repo = new PatientRepository();
