@@ -47,7 +47,7 @@ namespace Patment.Controllers
             return View(patientDetails);
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult UpdateConfirmation(Patient patient)
         {
             var repo = new PatientRepository();

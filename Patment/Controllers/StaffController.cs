@@ -46,7 +46,7 @@ namespace Patment.Controllers
             return View(staffDetails);
         }
 
-        [HttpPut]
+        [HttpPost]
         public ActionResult UpdateConfirmation(Staff staff)
         {
             var repo = new StaffRepository();

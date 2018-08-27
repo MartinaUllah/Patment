@@ -63,7 +63,6 @@ namespace Patment.Repository
                     var result = connection.Query<Staff>("[dbo].[GetOneStaff]",
                         new
                         {
-
                             StaffID = StaffID
                         },
                         commandType: CommandType.StoredProcedure);
@@ -134,9 +133,7 @@ namespace Patment.Repository
                     var result = connection.Query<Staff>("[dbo].[DeleteStaff]",
                         new
                         {
-
                             StaffID = StaffID
-
                         },
                         commandType: CommandType.StoredProcedure);
                     return result.FirstOrDefault();
