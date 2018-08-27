@@ -1,0 +1,27 @@
+﻿@model List<Patment.Models.Staff>
+@{
+    ViewBag.Title = "AllStaff";
+}
+
+<h2>All Staff</h2>
+
+<table class="table">
+    <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Details</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@Html.ActionLink("Details", "DetailsOfStaff", "Staff", new { StaffID = item.StaffID }, null)</td>
+            <td>@Html.ActionLink("Edit", "GettingStaffDetails", "Staff", new { StaffID = item.StaffID }, null)</td>
+            <td>@Html.ActionLink("Delete", "DeletingOfStaff", "Staff", new { StaffID = item.StaffID }, null)</td>
+         </tr>
+    }
+</table>

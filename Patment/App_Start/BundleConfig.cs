@@ -26,6 +26,12 @@ namespace Patment
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryjs").Include(
+            "~/Scripts/jquery-ui-1.11.4.js"));
+
+            bundles.Add(new StyleBundle("~/jquerycss").Include(
+           "~/Content/themes/base/all.css"));
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@model Patment.Models.Patient
+@{
+    ViewBag.Title = "DetailsOfPatient";
+}
+
+<h2>Details Of Patient</h2>
+
+<table class="table">
+    <tr>
+        <th>Patient ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date Of Birth</th>
+        <th>Nhs Number</th>
+    </tr>
+
+    <tr>
+        <td>@Model.PatientID</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.LastName</td>
+        <td>@Model.DateOfBirth</td>
+        <td>@Model.NhsNumber</td>
+    </tr>
+
+</table>

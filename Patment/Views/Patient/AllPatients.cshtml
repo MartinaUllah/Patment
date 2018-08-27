@@ -1,0 +1,31 @@
+﻿@model List<Patment.Models.Patient>
+@{
+    ViewBag.Title = "AllPatients";
+}
+
+<h2>All Patients</h2>
+
+<table class="table">
+
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<th>Html.HiddenFor(item.PatientID)</th>*@
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@Html.ActionLink("Details", "DetailsOfPatient", "Patient", new { PatientId = item.PatientID }, null)</td>
+            <td>@Html.ActionLink("Edit", "GettingPatientDetails", "Patient", new { PatientID = item.PatientID }, null)</td>
+            <td>@Html.ActionLink("Delete", "DeletePatient", "Patient", new { PatientID = item.PatientID }, null)</td>
+        </tr>
+    }
+
+</table>
