@@ -40,7 +40,8 @@ namespace Patment.Repository
             {
                 try
                 {
-                    var result = connection.Query<Patient>("GetAllPatients", commandType: CommandType.StoredProcedure);
+                    var result = connection.Query<Patient>("GetAllPatients", commandType:
+                    CommandType.StoredProcedure);
                     return result.ToList();
                 }
                 catch (Exception ex)
