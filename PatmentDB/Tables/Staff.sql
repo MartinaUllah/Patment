@@ -6,7 +6,7 @@
 	[StartDate] [date] NOT NULL,
 	[DateOfBirth] [date] NOT NULL,
 	[StaffTypeID] [int] NOT NULL, 
-	CONSTRAINT Fk_StaffType_Staff Foreign Key (StaffTypeID) References StaffType(StaffTypeID)
+	CONSTRAINT Fk_Staff_StaffType Foreign Key (StaffTypeID) References StaffType(StaffTypeID)
 )
 
 
